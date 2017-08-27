@@ -6,7 +6,7 @@
   "publicPort": 3000,
   "mongoUrl": "mongodb://localhost/DemocracyOS-dev",
   "mongoUsersUrl": "",
-  "jwtSecret": "Generate a secret token and paste it here.",
+  "jwtSecret": "jdlksj12'039'01293'021fsdfsd",
   "corsDomains": [],
   "signinUrl": "",
   "signupUrl": "",
@@ -39,18 +39,24 @@
     "token": ""
   },
   "notifications": {
-    "url": "",
-    "token": "",
     "mailer": {
-      "name": "Democracia Ecuador",
-      "email": "juliansalas080@gmail.com",
-      "service": "gmail",
+      "name": "The DemocracyOS Team",
+      "email": "testingdeveloptment@gmail.com",
+      "service": "Gmail",
       "auth": {
-        "user": "juliansalas080@gmail.com",
-        "pass": "testing"
+        "user": "testingdeveloptment@gmail.com",
+        "pass": "qw3rty123"
       }
     },
-    "nodemailer": {}
+    "nodemailer": {
+      "host": "smtp.mailgun.org",
+      "port": 587,
+      "secure": true,
+      "auth": {
+        "user": "postmaster@sandbox665a1c46568c444396f5d3bf2454b910.mailgun.org",
+        "pass": "8167c400138b975d2598fdc01055bc6e"
+      }
+    }
   },
   "slack": {
     "apiErrorWebhookUri": ""

@@ -4,7 +4,7 @@ services:
   app:
     build:
       context: .
-      #dockerfile: ./docker/development.Dockerfile
+      dockerfile: ./docker/development.Dockerfile
     env_file: docker/.env
     links:
       - mongo
@@ -16,17 +16,27 @@ services:
       - .:/usr/src
       - /usr/src/node_modules
     tty: true
+    # networks:
+    #   app_net:
+    #     ipv4_address: '$IP_NODE'
+
 
   mongo:
     image: mongo:3.2
+    #env_file: .env
+    # networks:
+    #   app_net:
+    #     ipv4_address: '$IP_MONGO'
+
     # Optionally mount external data directory
-    # volumes:
-  #   #   - path-to-your-data-dir:/data/db
+    volumes:
+      - ./datamongo:/data/db
 
   democracyos_nginx:
     build:
       context: ./nginx
     container_name: "DemocracyosNginx"
+    # env_file: .env
     links:
       - app   
     ports:
@@ -35,5 +45,16 @@ services:
       - app
     volumes:
       - .:/www/data/democracy/app
+    # networks:
+    #   app_net:
+    #     ipv4_address: '$IP_NGINX'
+
     #   - /nginx/logs/log_error:/var/log/nginx/
     restart: unless-stopped
+
+# networks:
+#   app_net:
+#     driver: bridge
+#     ipam:
+#       config:
+#         - subnet: 172.25.1.0/24
