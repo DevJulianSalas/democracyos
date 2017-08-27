@@ -11,7 +11,7 @@
   "signinUrl": "",
   "signupUrl": "",
   "settingsUrl": "",
-  "staff": [],
+  "staff": ["juliansalas080@gmail.com "],
   "allowEmailAliases": true,
   "facebookSignin": false,
   "publicEmails": false,
@@ -42,12 +42,12 @@
     "url": "",
     "token": "",
     "mailer": {
-      "name": "The DemocracyOS Team",
-      "email": "no-reply@democracyos.org",
-      "service": "",
+      "name": "Democracia Ecuador",
+      "email": "juliansalas080@gmail.com",
+      "service": "gmail",
       "auth": {
-        "user": "",
-        "pass": ""
+        "user": "juliansalas080@gmail.com",
+        "pass": "testing"
       }
     },
     "nodemailer": {}

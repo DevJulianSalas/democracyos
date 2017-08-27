@@ -1,0 +1,8 @@
+Para correr la aplicacion con docker debes
+
+1) configurar staff con los emails que requieras para que puedas administrar
+   la app desde el admin, ve  confi/defaults.json y rellena STAFF como array 
+   si tienes muchos correos
+
+     "staff": ["juliansalas080@gmail.com "],
+2)
