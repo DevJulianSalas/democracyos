@@ -3,6 +3,8 @@
   "protocol": "http",
   "warnHTTP": true,
   "host": "localhost",
+  "notificationsUrl":"https://api.mailgun.net/v3/sandbox665a1c46568c444396f5d3bf2454b910.mailgun.org",
+  "notificationsToken":"key-5199e2d453fe1f8a2986afc4fad39cef",
   "publicPort": 3000,
   "mongoUrl": "mongodb://localhost/DemocracyOS-dev",
   "mongoUsersUrl": "",
@@ -39,18 +41,20 @@
     "token": ""
   },
   "notifications": {
+    "url":"https://api.mailgun.net/v3/sandbox665a1c46568c444396f5d3bf2454b910.mailgun.org",
+    "token":"key-5199e2d453fe1f8a2986afc4fad39cef",
     "mailer": {
       "name": "The DemocracyOS Team",
-      "email": "testingdeveloptment@gmail.com",
-      "service": "Gmail",
+      "email": "no-reply@sandbox665a1c46568c444396f5d3bf2454b910.mailgun.org",
+      "service": "mailgun",
       "auth": {
-        "user": "testingdeveloptment@gmail.com",
-        "pass": "qw3rty123"
+        "user": "postmaster@sandbox665a1c46568c444396f5d3bf2454b910.mailgun.org",
+        "pass": "8167c400138b975d2598fdc01055bc6e"
       }
     },
     "nodemailer": {
-      "host": "smtp.mailgun.org",
-      "port": 587,
+      "host": "209.61.151.224",
+      "port": 25,
       "secure": true,
       "auth": {
         "user": "postmaster@sandbox665a1c46568c444396f5d3bf2454b910.mailgun.org",

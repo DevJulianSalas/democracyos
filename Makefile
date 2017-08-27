@@ -22,9 +22,21 @@ packages:
 	@echo "Installing dependencies..."
 	@npm install
 
+docker-build:
+	@echo "Build DemocracyoOS docker development environment..."
+	@docker-compose -f docker-compose.yml build
+
 docker:
 	@echo "Starting DemocracyoOS docker development environment..."
-	@docker-compose up app
+	@docker-compose -f docker-compose.yml up
+
+docker-stop:
+	@echo "Stop DemocracyoOS docker development environment..."
+	@docker-compose -f docker-compose.yml stop
+
+docker-delete:
+	@echo "Delete DemocracyoOS docker development environment..."
+	@docker-compose -f docker-compose.yml down
 
 clean:
 	@echo "Removing dependencies, components and built assets..."
