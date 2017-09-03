@@ -1,60 +1,28 @@
-version: '2'
+version: '3'
 
 services:
   app:
-    build:
-      context: .
-      dockerfile: ./docker/development.Dockerfile
-    env_file: docker/.env
+    container_name: dos
+    build: .
+    command: ["./node_modules/.bin/gulp", "bws"]
+    environment:
+      - NODE_ENV=development
+      - DEBUG=democracyos*
+      - MONGO_URL=mongodb://mongo/development
+      - ORGANIZATION_NAME=DemocracyOS Fork
     links:
       - mongo
     ports:
-      - "3000:3000"
-    # mount source volume, but
-    # don't overwrite `node_modules` or mirror dir from container
+      - 3000:3000
     volumes:
-      - .:/usr/src
-      - /usr/src/node_modules
+      - ./ext/lib:/usr/src/ext/lib
+      - ./public:/usr/src/public
     tty: true
-    networks:
-      app_net:
-        ipv4_address: '$IP_NODE'
-
 
   mongo:
-    image: mongo:3.2
-    env_file: .env
-    networks:
-      app_net:
-        ipv4_address: '$IP_MONGO'
-
-    # Optionally mount external data directory
-    volumes:
-      - ./datamongo:/data/db
-
-  democracyos_nginx:
-    build:
-      context: ./nginx
-    container_name: "DemocracyosNginx"
-    env_file: .env
-    links:
-      - app   
+    container_name: dos-mongo
+    image: mongo
     ports:
-      - "80:80"
-    depends_on:
-      - app
+      - 27017:27017
     volumes:
-      - .:/www/data/democracy/app
-    networks:
-      app_net:
-        ipv4_address: '$IP_NGINX'
-
-    #   - /nginx/logs/log_error:/var/log/nginx/
-    restart: unless-stopped
-
-networks:
-  app_net:
-    driver: bridge
-    ipam:
-      config:
-        - subnet: 172.25.1.0/24
+      - ./tmp/db:/data/db
