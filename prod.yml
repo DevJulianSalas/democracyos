@@ -5,7 +5,6 @@ services:
       context: .
     environment:
       - NODE_ENV='production'
-    env_file: docker/.env
     links:
       - mongo
     ports:
@@ -17,9 +16,7 @@ services:
       - /usr/src/node_modules
     tty: true
     restart: unless-stopped
-    networks:
-      app_net:
-        ipv4_address: '$IP_NODE'
+    
 
 
   mongo:
@@ -27,9 +24,6 @@ services:
     container_name: MongoProduction
     volumes:
       - ./tmp/db:/data/db
-    networks:
-      app_net:
-        ipv4_address: '$IP_MONGO'
     restart: unless-stopped
 
 
@@ -37,7 +31,6 @@ services:
     build:
       context: ./nginx
     container_name: "NginxProduction"
-    env_file: .env
     links:
       - appdemo 
     ports:
@@ -46,15 +39,7 @@ services:
       - appdemo
     volumes:
       - .:/www/data/democracy/app
-    networks:
-      app_net:
-        ipv4_address: '$IP_NGINX'
-    #   - /nginx/logs/log_error:/var/log/nginx/
+   #   - /nginx/logs/log_error:/var/log/nginx/
     restart: unless-stopped
 
-networks:
-  app_net:
-    driver: bridge
-    ipam:
-      config:
-        - subnet: 172.25.1.0/24  
+
