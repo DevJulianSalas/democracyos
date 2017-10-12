@@ -4,14 +4,14 @@
   "warnHTTP": true,
   "host": "localhost",
   "publicPort": 3000,
-  "mongoUrl": "mongodb://localhost/DemocracyOS-dev",
+  "mongoUrl": "mongodb://mongo/DemocracyOS-dev",
   "mongoUsersUrl": "",
   "jwtSecret": "fjsakldjfoiwejflwkjflksdajflwke8jkfldsamflsad",
   "corsDomains": [],
   "signinUrl": "",
   "signupUrl": "",
   "settingsUrl": "",
-  "staff": ["juliansalas080@gmail.com"],
+  "staff": ["juliansalas080@gmail.com", "paulespinosasalazar@gmail.com"],
   "allowEmailAliases": true,
   "facebookSignin": false,
   "publicEmails": false,
@@ -53,8 +53,8 @@
     "nodemailer":{ 
       "host": "smtp.mailgun.org", "port": 465, "secure": true, 
         "auth": { 
-          "user": "postmaster@sandbox665a1c46568c444396f5d3bf2454b910.mailgun.org", 
-          "pass": "8167c400138b975d2598fdc01055bc6e" 
+          "user": "postmaster@democraciaparatodos.ec", 
+          "pass": "b1d72912e3cdd3691d29fd867831b4dd" 
         }
     }
   },
