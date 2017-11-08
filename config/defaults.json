@@ -42,8 +42,8 @@
     "url": "",
     "token": "",
     "mailer": {
-      "name": "The DemocracyOS Team",
-      "email": "no-reply@democracyos.org",
+      "name": "Equipo Democraciaparatodos.ec",
+      "email": "no-reply@democraciaparatodos.ec ",
       "service": "",
       "auth": {
         "user": "",
@@ -110,11 +110,11 @@
       "username": "@democracyos"
     }
   },
-  "logo": "/lib/boot/logo.png",
-  "logoMobile": "/lib/boot/logo-mobile.png",
+  "logo": "/lib/boot/logo-democracia.png",
+  "logoMobile": "/lib/boot/logo-democracia.png",
   "favicon": "/lib/boot/favicon.ico",
-  "organizationName": "DemocracyOS on GitHub",
-  "organizationEmail": "no-reply@democracyos.org",
+  "organizationName": "Democracia para todos",
+  "organizationEmail": "no-reply@democraciaparatodos.ec",
   "organizationUrl": "https://github.com/DemocracyOS/app",
   "learnMoreUrl": "",
   "googleAnalyticsTrackingId": "",
@@ -124,7 +124,7 @@
   "privacyPolicy": false,
   "glossary": false,
   "homeLink": "/",
-  "headerBackgroundColor": "#64476e",
+  "headerBackgroundColor": "#ff9900",
   "headerFontColor": "#fff",
   "headerContrast": false,
   "googleAPIKey": "",
